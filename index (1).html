@@ -58,7 +58,7 @@
 
 <div class="slideshow-container">
   <!-- Slides -->
-  <div class="slide active"><img src="000_01.jpg" alt="Slide 1"></div>
+  <div class="slide"><img src="000_01.jpg" alt="Slide 1"></div>
   <div class="slide"><img src="000_02.jpg" alt="Slide 2"></div>
   <div class="slide"><img src="000_03.jpg" alt="Slide 3"></div>
   <div class="slide"><img src="000_04.jpg" alt="Slide 4"></div>
@@ -91,6 +91,7 @@
   <div class="slide"><img src="000_31.jpg" alt="Slide 31"></div>
   <div class="slide"><img src="000_32.jpg" alt="Slide 32"></div>
   <div class="slide"><img src="000_33.jpg" alt="Slide 33"></div>
+  
   <!-- Navigation -->
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
@@ -111,6 +112,9 @@
     slideIndex = (slideIndex + n + slides.length) % slides.length;
     showSlide(slideIndex);
   }
+
+  // Initialize first slide
+  showSlide(slideIndex);
 </script>
 
 </body>
