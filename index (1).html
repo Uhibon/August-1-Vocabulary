@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+    }
+    .slide img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .active {
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+      border-radius: 3px;
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <!-- Slides -->
+  <div class="slide active"><img src="000_01.jpg" alt="Slide 1"></div>
+  <div class="slide"><img src="000_02.jpg" alt="Slide 2"></div>
+  <div class="slide"><img src="000_03.jpg" alt="Slide 3"></div>
+  <div class="slide"><img src="000_04.jpg" alt="Slide 4"></div>
+  <div class="slide"><img src="000_05.jpg" alt="Slide 5"></div>
+  <div class="slide"><img src="000_06.jpg" alt="Slide 6"></div>
+  <div class="slide"><img src="000_07.jpg" alt="Slide 7"></div>
+  <div class="slide"><img src="000_08.jpg" alt="Slide 8"></div>
+  <div class="slide"><img src="000_09.jpg" alt="Slide 9"></div>
+  <div class="slide"><img src="000_10.jpg" alt="Slide 10"></div>
+  <div class="slide"><img src="000_11.jpg" alt="Slide 11"></div>
+  <div class="slide"><img src="000_12.jpg" alt="Slide 12"></div>
+  <div class="slide"><img src="000_13.jpg" alt="Slide 13"></div>
+  <div class="slide"><img src="000_14.jpg" alt="Slide 14"></div>
+  <div class="slide"><img src="000_15.jpg" alt="Slide 15"></div>
+  <div class="slide"><img src="000_16.jpg" alt="Slide 16"></div>
+  <div class="slide"><img src="000_17.jpg" alt="Slide 17"></div>
+  <div class="slide"><img src="000_18.jpg" alt="Slide 18"></div>
+  <div class="slide"><img src="000_19.jpg" alt="Slide 19"></div>
+  <div class="slide"><img src="000_20.jpg" alt="Slide 20"></div>
+  <div class="slide"><img src="000_21.jpg" alt="Slide 21"></div>
+  <div class="slide"><img src="000_22.jpg" alt="Slide 22"></div>
+  <div class="slide"><img src="000_23.jpg" alt="Slide 23"></div>
+  <div class="slide"><img src="000_24.jpg" alt="Slide 24"></div>
+  <div class="slide"><img src="000_25.jpg" alt="Slide 25"></div>
+  <div class="slide"><img src="000_26.jpg" alt="Slide 26"></div>
+  <div class="slide"><img src="000_27.jpg" alt="Slide 27"></div>
+  <div class="slide"><img src="000_28.jpg" alt="Slide 28"></div>
+  <div class="slide"><img src="000_29.jpg" alt="Slide 29"></div>
+  <div class="slide"><img src="000_30.jpg" alt="Slide 30"></div>
+  <div class="slide"><img src="000_31.jpg" alt="Slide 31"></div>
+  <div class="slide"><img src="000_32.jpg" alt="Slide 32"></div>
+  <div class="slide"><img src="000_33.jpg" alt="Slide 33"></div>
+  <!-- Navigation -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+
+  function showSlide(index) {
+    for (let slide of slides) {
+      slide.classList.remove("active");
+    }
+    slides[index].classList.add("active");
+  }
+
+  function plusSlides(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+</script>
+
+</body>
+</html>
